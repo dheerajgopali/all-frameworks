@@ -4,7 +4,7 @@ package com.dheeraj.learning.recursive;
  * Created by gopad on 24-03-2017.
  */
 public class Factorial {
-    public int getFactorialOf(int n){
+    public static int getFactorialOf(int n){
         if(n==1 || n==0)
             return 1;
         else
