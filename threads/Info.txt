@@ -1,0 +1,8 @@
+This module is meant for threads topics practice.
+
+Definitions
+Race condition:
+Spinwait:
+    When a thread has to wait for a very little time to get what it wants, instead of leaving the monitor/CPU, it continues
+to use it with for loop or something without releasing monitor/CPU. This way the cached data by thread will not be lost.
+Otherwise if it releases monitor and reaquires it, it has to get the cached data again which might be time consuming.
