@@ -1,0 +1,21 @@
+Create a web application manually
+
+All you need is to create the folder structure appropriately
+If it is a maven project, make sure to create folder structure as below
+
+src
+--main
+----webapp
+------index.jsp //This is to show the default page when application is accessed
+------WEB-INF
+--------web.xml //Can contain as simple info as below
+<?xml version = "1.0" encoding = "UTF-8"?>
+<web-app xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+         xmlns = "http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+   http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id = "WebApp_ID" version = "3.0">
+    <display-name>User Management</display-name>
+</web-app>
+
+After this, go to folder location, execute mvn clean install to create war file and deploy it in any container.
