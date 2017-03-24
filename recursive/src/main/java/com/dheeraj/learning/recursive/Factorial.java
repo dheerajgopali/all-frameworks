@@ -1,4 +1,4 @@
-package com.dheeraj.learning.threads.recursive;
+package com.dheeraj.learning.recursive;
 
 /**
  * Created by gopad on 24-03-2017.
