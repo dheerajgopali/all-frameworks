@@ -14,6 +14,8 @@
         <module>recursive</module>
         <module>rest-service</module>
         <module>sample-webapp</module>
+        <module>automation</module>
+        <module>servlets</module>
     </modules>
 
 
