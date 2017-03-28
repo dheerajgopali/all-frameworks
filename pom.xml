@@ -12,11 +12,11 @@
         <module>threads</module>
         <module>junit</module>
         <module>recursive</module>
-        <module>rest-service</module>
         <module>sample-webapp</module>
         <module>automation</module>
         <module>servlets</module>
         <module>miscellaneous</module>
+        <module>web-service</module>
     </modules>
 
 
