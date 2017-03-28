@@ -17,6 +17,8 @@
         <module>servlets</module>
         <module>miscellaneous</module>
         <module>web-service</module>
+        <module>data-structures</module>
+        <module>utilities</module>
     </modules>
 
 
