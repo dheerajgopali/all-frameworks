@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class GreetingServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter pw =response.getWriter();
 		pw.print("hello");
 		ServletContext context = this.getServletContext();
