@@ -1,0 +1,33 @@
+Each module will have a separate framework.
+
+
+
+
+
+
+
+=================================================================================
+Intellij community edition doesn't support web application plugins.
+So can't create web.xml and stuff
+
+Planning to create ui module in eclipse
+
+=================================================================================
+How to create remote GIT repository
+1.Create a folder with foldername.git extension
+2.git init –bare (This creates empty bare repo)
+
+How to create and sync local git repo and push it to remote repo
+1.Go to current project
+2.git init (Should not use -bare switch. -bare cleans all the existing files)
+3.Add the files to commit. Then commit the files (By default everything will go into master branch)
+4.Add a normal name to this repo. Easy to identify while pushing changes
+5.Push all the changes to the remote repo
+
+Remote repository path (Its a pendrive. Change drive letter if pendrive drive is other than E drive)
+E:dev/remote-repos/git/all-frameworks.git
+
+How to clone the repo
+git clone E:dev/remote-repos/git/all-frameworks.git
+
+

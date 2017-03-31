@@ -1,0 +1,13 @@
+All Accounts credentials
+========================================================================================================================
+Local Oracle Database
+dba : sys as sysdba
+pass : Dheeraj123
+
+database name : orcl
+password : Dheeraj123
+
+New datbase
+Global database name : university
+pdb : universitypdb
+password : Dheeraj123

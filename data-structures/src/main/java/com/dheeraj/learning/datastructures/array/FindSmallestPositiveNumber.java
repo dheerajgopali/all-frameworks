@@ -1,6 +1,6 @@
 package com.dheeraj.learning.datastructures.array;
 
-import com.dg.af.utilities.ListUtility;
+import com.dheeraj.learning.utilities.ListUtility;
 
 import java.util.ArrayList;
 

@@ -1,0 +1,104 @@
+1.Do yourself a favor, get a good book & organize your study based on different chapters which might be relevant to you.
+2.hashing, caching, indexing and the concept of divide and conquer (e.g binary search).
+3.sorting, searching, trees, arrays.  And the inevitable hash table.
+
+1) Don't interview at your dream job first.
+2) Be passionate about development.
+5) APIs really don't impress.
+6) Know algorithms and data structures.
+8) Know the language you say you do.
+http://paultyma.blogspot.ca/2007/03/howto-pass-silicon-valley-software.html
+
+
+DS topics to consider
+Recursion
+Big-OTime
+Memory (Stack vs. Heap)
+Bit Manipulation
+LinkedList
+Stack
+Queue
+Tries
+Priority Queue
+Graph
+Heap
+hashing, caching, indexing and the concept of divide and conquer (e.g binary search).
+arrays.
+Vectors / ArrayLists
+hash table. This is an extremely important topic.
+->SEARCHING
+Binary Search
+Depth-First Search
+Breadth-First Search
+Dijkstra's algorithm
+Floyd-Warshall
+Traveling Salesman
+->SORTING
+Bubble Sort
+Quick Sort in-place
+Insertion Sort
+Heap Sort
+Bucket Sort
+Radix Sort
+->TREES
+Merge Sort
+Quicksort
+Tree Insert/ Find /e.t.c
+Binary Trees
+Binary Search Tree
+AVL Tree
+Red-Black Tree
+
+Other Concepts
+Singleton Design Pattern
+Factory Design Pattern
+
+Points to notice
+->Java implements all tree collections using R-B tree.
+->Resume :
+1.show what you did, how you did it, and what the results were. Ideally, you should try to make
+the results "measurable" somehow.
+
+Amazon
+1.scalability questions, Check recommendations in the Scalability and Memory Limits chapter.
+2.objectoriented design.
+
+Google
+1."Scalability and  Memory Limits.
+2.Bit Manipulation
+
+Yahoo
+1.system design
+
+Fill the follwing in your leisure time
+Common Questions            Project 1               Project 2               Project 3           Project 4
+Most Challenging            http tunneling          Spring configuration    Handling data       Debugging the first project
+What You Learned            leadership skills       spring and hibernate    spring batch
+Most Interesting
+Hardest Bug
+Enjoyed Most
+Conflicts with Teammates
+
+What questions should you ask the interviewer?
+1. "How much of your day do you spend coding?"
+2. "How many meetings do you have every week?"
+3. "What is the ratio of testers to developers to program managers? What is the interaction
+like? How does project planning happen on the team?"
+
+Question
+1.Find this out
+Using this table, you could easily compute, for example, that a hash table mapping every 32-bit integer to a boolean value could fit in memory on a single machine.
+
+Five Steps to a Technical Question
+A technical interview question can be solved utilizing a five step approach:
+1. Ask your interviewer questions to resolve ambiguity.
+2. Design an Algorithm.
+3. Write pseudocode first, but make sure to tell your interviewer that you'll eventually
+write "real" code.
+4. Write your code at a moderate pace.
+5. Test your code and carefully fix any mistakes
+
+Approaches to resolve technical/algorithm questions
+1.Examplify                     -   Take example and derive algo from that.
+2.Pattern Matching              -   List the available algos that can be tweaked.
+3.Simplify and Generalize.      -   Reduce the complexity and imple algo and then generalize it.

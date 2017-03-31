@@ -1,7 +1,7 @@
 package com.dheeraj.learning.datastructures.array;
 
-import com.dg.af.utilities.ArrayUtil;
-import com.dg.af.utilities.ListUtility;
+
+import com.dheeraj.learning.utilities.ArrayUtil;
 
 import java.util.ArrayList;
 

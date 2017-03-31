@@ -1,0 +1,1 @@
+Yet to work on this to create hibernatecfg file and create sample data to it
