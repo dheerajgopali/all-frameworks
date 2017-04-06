@@ -21,6 +21,7 @@
         <module>utilities</module>
         <module>design-patterns</module>
         <module>orm</module>
+        <module>trash</module>
     </modules>
 
 
