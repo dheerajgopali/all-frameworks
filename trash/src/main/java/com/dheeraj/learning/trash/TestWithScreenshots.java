@@ -26,7 +26,6 @@ public class TestWithScreenshots {
     public void setUp() {
         System.setProperty("webdriver.gecko.driver","C:\\dev\\tools\\geckodriver-v0.15.0-win64\\geckodriver.exe");
         driver = new FirefoxDriver();
-
         driver.manage().window().maximize();
     }
 
@@ -39,11 +38,11 @@ public class TestWithScreenshots {
     public void testFirstResult() throws InterruptedException, IOException
     {
 
-        driver.get("http://www.vpl.ca");
+        driver.get("http://10.225.69.12:8081/prweb/PRServlet/dPO858fPW-kyBfuCEhO7SufWwPEbgG-o*/!STANDARD?pyActivity=Embed-PortalLayout.RedirectAndRun&ThreadName=OpenPortal&Location=pyActivity%3DData-Portal.ShowSelectedPortal%26portal%3DPerformanceDashboard%26Name%3D%20PerformanceDashboard%26SkinPreviewName%3D%26developer%3Dfalse%26ThreadName%3DOpenPortal&bPurgeTargetThread=true&UserIdentifier=admin@perflab&Password=cnVsZXM=");
 
 //take the screenshot of the entire home page and save it to a png file
         Screenshot screenshot = new AShot().shootingStrategy(new ViewportPastingStrategy(1000)).takeScreenshot(driver);
-        ImageIO.write(screenshot.getImage(), "PNG", new File("c:\\Screenshots\\home.png"));
+        /*ImageIO.write(screenshot.getImage(), "PNG", new File("c:\\Screenshots\\home.png"));
 
         WebElement searchField = driver.findElement(By.xpath("//input[@id='globalQuery']"));
         searchField.click();
@@ -56,12 +55,13 @@ public class TestWithScreenshots {
 
 //take the screenshot of the entire results page and save it to a png file
         screenshot = new AShot().shootingStrategy(new ViewportPastingStrategy(1000)).takeScreenshot(driver);
-        ImageIO.write(screenshot.getImage(), "PNG", new File("c:\\Screenshots\\results.png"));
+        ImageIO.write(screenshot.getImage(), "PNG", new File("c:\\Screenshots\\results.png"));*/
 
-//take the screenshot of a div element that includes all results page details>br/> screenshot = new AShot().takeScreenshot(driver, driver.findElement(By.xpath("(//div[@id='ct_search'])[1]")));
-        ImageIO.write(screenshot.getImage(), "PNG", new File("c:\\Screenshots\\div_element.png"));
+//take the screenshot of a div element that includes all results page details>br/>
+        screenshot = new AShot().takeScreenshot(driver, driver.findElement(By.xpath("(//div[@class='tabbed_expandInnerDivStyle tabpanelnofocus'])[7]")));
+        ImageIO.write(screenshot.getImage(), "PNG", new File("c:\\Screenshots\\PPM.png"));
 
-        WebElement searchResultLink = driver.findElement(By.xpath("(//a[@testid='bib_link'])[2]"));
+        /*WebElement searchResultLink = driver.findElement(By.xpath("(//a[@testid='bib_link'])[2]"));
         searchResultLink.click();
 
         Thread.sleep(3000);
@@ -74,7 +74,7 @@ public class TestWithScreenshots {
         String bookTitleValue = bookTitleElement.getText();
 
         assertEquals(bookTitleElement.isDisplayed(), true);
-        assertTrue(bookTitleValue.length() > 0);
+        assertTrue(bookTitleValue.length() > 0);*/
 
     }
 
