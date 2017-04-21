@@ -23,6 +23,7 @@
         <module>orm</module>
         <module>trash</module>
         <module>front-end</module>
+        <module>maven-work</module>
     </modules>
 
 
