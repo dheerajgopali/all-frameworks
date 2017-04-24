@@ -1,0 +1,2 @@
+Cloning of an existing object instead of creating new one and can also be customized as per the requirement
+-- Example in javatpoint is not quite good. yet to check another one.

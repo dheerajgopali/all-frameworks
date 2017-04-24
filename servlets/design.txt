@@ -1,0 +1,6 @@
+1.Create a simple servlet
+2.With doGet
+3.With doPost
+4.With interceptors
+5.Play with sessions
+6.

@@ -1,0 +1,23 @@
+Creational (the way of creating objects)
+    1.Factory Method    --  define an interface or abstract class for creating an object but let the subclasses decide which class to instantiate
+    2.Abstract Factory  --  define an interface or abstract class for creating families of related (or dependent) objects but without specifying their concrete sub-classes.
+    3.Singleton         --  define a class that has only one instance and provides a global point of access to it
+    4.Prototype         --  cloning of an existing object instead of creating new one and can also be customized as per the requirement
+    5.Builder           --  construct a complex object from simple objects using step-by-step approach"
+    6.Object pool       --  to reuse the object that are expensive to create
+
+Structural (how classes and objects can be composed, to form larger structures)
+    1.Adapter           --  converts the interface of a class into another interface that a client wants
+    2.Bridge            --  decouple the functional abstraction from the implementation so that the two can vary independently
+    3.Composite         --  allow clients to operate in generic manner on objects that may or may not represent a hierarchy of objects
+    4.Decorator         --  attach a flexible additional responsibilities to an object dynamically
+    5.Facade            --  just provide a unified and simplified interface to a set of interfaces in a subsystem, therefore it hides the complexities of the subsystem from the client
+    6.Flyweight         --  to reuse already existing similar kind of objects by storing them and create new object when no matching object is found
+    7.Proxy             --  provides the control for accessing the original object (proxy means an object representing another object).
+
+Behavioral (the interaction between the objects should be in such a way that they can easily talk to each other and still should be loosely coupled.)
+    1.Chain of responsibility
+                        --  avoid coupling the sender of a request to its receiver by giving multiple objects a chance to handle the request
+    2.Command           --  encapsulate a request under an object as a command and pass it to invoker object. Invoker object looks for the appropriate object which can handle this command and pass the command to the corresponding object and that object executes the command
+    3.Interpreter       --  to define a representation of grammar of a given language, along with an interpreter that uses this representation to interpret sentences in the language
+    4.Iterator          --  to access the elements of an aggregate object sequentially without exposing its underlying implementation (Also known as Cursor)

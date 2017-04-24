@@ -1,0 +1,11 @@
+url : jdbc:postgresql://localhost/dvdrental
+u : postgres
+pwd : dheeraj
+
+To create dvdrental database anywhere
+1.Keep the file : dvdrental.tar (which is present in dvdrental.zip)
+2.execute : CREATE DATABASE dvdrental;
+3.Go to postgres bin : cd C:\Program Files\PostgreSQL\9.5\bin
+4.Execute command : pg_restore -U postgres -d dvdrental C:\temp\dvdrental.tar
+
+Can also restore the same using pgadmin.

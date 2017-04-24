@@ -1,0 +1,202 @@
+DS topics to consider
+-->Recursion
+    ->Process of defining something in terms of itself. A method calls itself is recursive.
+    ->Use recursion for clarity, and (sometimes) for a reduction in the time needed to write and debug code, not for space savings or speed of execution.
+    ->Remember that every recursive method must have a base case (rule #1).
+    1. int fact(int n){
+        if(n==0 || n==1)
+            return 1;
+         else
+            return n*fact(n-1);
+    }
+    2.
+    int reverse(String str){
+        if(str.length() == 0)
+            return str;
+        else
+            return reverse(str.substring(1,str.length))+str;
+    }
+
+-->Big-OTime
+    Program :
+    a=5                             //1
+    b=6                             //1
+    c=10                            //1
+    for i in range(n):          //n
+       for j in range(n):       //n
+          x = i * i                 //n^2
+          y = j * j                 //n^2
+          z = i * j                 //n^2
+    for k in range(n):          //n
+       w = a*k + 45                 //n
+       v = b*b                      //n
+    d = 33                          //1
+
+    T(n)=3+3n2+2n+1=3n2+2n+4
+
+    By looking at the exponents, we can easily see that the n2 term will be dominant and therefore this fragment of code is O(n2). Note that all of the other terms as well as
+    the coefficient on the dominant term can be ignored as n grows larger.
+
+-> Hash table.              [This is an extremely important topic.]
+    1.A data structure that can be searched in O(1) time
+    2.The mapping between an item and the slot where that item belongs in the hash table is called the hash function
+    3.If the hash function returns same value for two or more items, then it is referred as collision or clash.
+    4.To provide systematic method for placing second item to avoid collision is called collision resolution.
+    4.Simple hash function is item/hashtable size
+    5.A hash function that maps each item into a unique slot is referred to as a perfect hash function
+    6.Load factory ? = number of items in table / table size.
+        if ? is small, lower chance of collision
+           ? is large, more and more collisions.
+    ->Increase performace efficiency
+        1.Increase size of hash table (not feasible when number of possible items is large)
+    ->Hash functions
+        ->Folding method
+            Divide items into equal size pieces(Last piece may not be equal size)
+            These pieces are added and then get the resulting hash value.
+            If the resulting hash is greater than size of hash table, divide the result by hash table size.
+            a.phone number as an item : 436-555-4601
+            b.groups of 2 (43,65,55,46,01)
+            c.add 43+65+55+46+01, we get 210.
+            d.210 % 11 = 1
+            So 436-555-4601 goes to slot 1
+        ->mid-square method
+            Compute square of the item and extract some portion of resulting digits.
+            a.take item 44
+            b.44^2 = 1936
+            c.Extract middle two digits - 93
+            d.99%11 = 5
+            So 44 goes to slot 5
+        ->Using Ordinal Values for character based items.
+            a.item is word "cat"
+            b.their respective ordinances are 99,97,116
+            c.add 99+97+116=312
+            d.312%11 = 4
+            So word "cat" goes to slot 4
+            Disadvantage : Anagrams(the result of rearranging the letters or word) will always be given the same hash value.
+                            To avoid we can use position of char sa weight.
+                            Same example above becomes
+                            a.99*1+97*2+116*3=641
+                            b.641%11 = 3
+        ->Important **
+            Hash function has to be efficient so that it does not become the dominant part of the storage and search process.
+            If the hash function is too complex, then it becomes more work to compute the slot name than it would be to simply
+            do a basic sequential or binary search as described earlier. This would quickly defeat the purpose of hashing.
+    ->Collision resolution techniques
+        ->Open addressing (linear probing)
+            Start at original hash value position and then move in sequential manner through the slots until a vacant slot.
+            Might need to go back to first slot(circularly) to cover entire has table.
+            Disadvantage :  1.Searching takes more time. If we are looking for an item and its hash value is x, but some
+                            other element is in slot x, we can't simply return false as there might be some collisions
+                            occured while inserting. So we are now forced to do a sequentila search, starting at position x
+                            looking until either we find the item or we find an empty slot.
+                            2.Clustering
+                                Items accumulate at the same location. This takes more insertion time as the cluster is more.
+                                Resolution : Instead of inserting in next slot on a collision, we skip slots thereby more
+                                                evenly distributing the items that have caused collisions.
+
+        ->Rehashing (linear probing)
+            newhashvalue = rehash(oldhashvalue) or
+            rehash(pos) = (pos + skip)%sizeoftable
+            size of skip is important as it determines whether all slots be visited or not.
+            Suggested is to keep the table size as prime number.
+
+       -->Rehashing (Quadratic probing)
+            Instead of constant 'skip' value, we use a rehash function that increments the hash value by 1,3,5,7,9....
+            So if first hash value is h, the successive values are h+1, h+4, h+9, h+16 ...
+            It uses skip consisting of successive perfect squares.
+
+        ->Chaining
+            To allow each slot to hold a reference to a collection (or chain) of items.
+            It allows many items to exist at same location.
+            As more items hash to same location, the difficulty of searching for the item in the collision increases.
+            Advantage : on the average there are likely to be many fewer items in each slot, so the search is perhaps more efficient.
+
+-> Memory (Stack vs. Heap) There are not just data structure. Its about the different memories used in Java or any programming language.
+    -Both of them are stored in RAM.
+    -In thread environment, each thread will have its own stack, But all threads, will share the heap.
+        So coordination between threads is needed while accessing heap memory.
+    -An object can stored on the stack in C++. I noticed an example with object reference is C++.
+    -Heap memory retains until its manually deleted. Any data created on stack for a function call, will be deleted on a function call returns.
+    -Stack is fixed size. If crosses, stack overflow occurs.
+    -Head memory can be increased as required. Typically added by os.
+    -Stack is much faster than heap.
+    -Data on stack memory automatically deallocated when variables go out of scope.
+    -Data on heap need to delete manually by programmer in C,C++
+    -Data on heap automatically gets deleted using garbage collection in Java, .Net
+    -Program crashes when stack over flow occurs.
+    -Fragmentation problem in heap makes allocating memory difficult because even though there is enough memory for the desired allocation,
+    it may not be in one big block for the desired amount of memory. eg. If i need 10mb of block, but all heap has is many noncontiguous blocks
+    of size less than 10mb even though total available size might be more than 100mb.
+    -If more memory is needed better to use Heap. else better to use Stack.
+
+Tries
+    - a trie is indeed a tree with many branches. Typically maxium 26 branches.
+    -The height of a try is equal to the lenght of the word
+    -Each node store only one character unlike trees which store entire word in a node.
+    -Can be used in word games.
+
+Graph
+    -A graph is a set of nodes(vertices) and edges(connection between two node).
+    - G = (V,E)
+    -Directed graph. NodeA--->NodeB Where the source and destination is clearly specified
+        Example. If web pages are treated as nodes and links between webpages are treated as edges, then it is directed graph.
+         Because if a web page A has link to web page B, it doesn't mean that web page B has link to web page A.
+    -Undirected graph, NodeA ---- NodeB where the direction is both ways.
+        Example. Socail network like facebook. Each user is treated as a node. If they are frieds with other uses, they are
+        connected with edges in graph.
+    -Weighted graph,
+        If all the edges in a graph, can't be treated with same value or equal, we use weighted graph.
+        We label the edges with weights or values or lengths.
+        Example. Intercity road network. CityA,CityB,CityC are there. we put edges between them to denote the distance among the cities.
+        Here each edge weighs the actual distance and weight of edge between CityA,CityB is diff from that of CityB,CityC
+
+
+Bit Manipulation
+LinkedList
+Stack
+Queue
+Priority Queue
+Heap
+hashing, caching, indexing and the concept of divide and conquer (e.g binary search).
+arrays.
+Vectors / ArrayLists
+
+->SEARCHING
+Binary Search
+Depth-First Search
+Breadth-First Search
+Dijkstra's algorithm
+Floyd-Warshall
+Traveling Salesman
+->SORTING
+Bubble Sort
+Quick Sort in-place
+Insertion Sort
+Heap Sort
+Bucket Sort
+Radix Sort
+->TREES
+Merge Sort
+Quicksort
+Tree Insert/ Find /e.t.c
+Binary Trees
+Binary Search Tree
+AVL Tree
+Red-Black Tree
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

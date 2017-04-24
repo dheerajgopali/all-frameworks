@@ -1,0 +1,58 @@
+Frameworks
+1.Groovy - a dynamic language similar to Python.
+    It can be used as scripting language for java, is dynamicaly compiled to JVM bytecode, and interoperates with other java code and libraries.
+->Code is similar to java
+->All java code is syntactically valid Groovy, semantics may be different.
+
+2.Grails - open source web application framework, follows 'coding by convention'
+    It uses Groovy, hides much of the configuration detail from the developer.
+
+3.Angular JS - a javascript MVC open-source web application framework
+    To address challenges in single-page applications. Simplifies both development and testing by framework MVC(model-view-controller) and MVVM(model-view-viewmodel) architectures.
+->Used as frontend part in MEAN stack.
+
+4.Node.js - an javascript open source, cross-platform runtime environment for server-side and networking applns.
+    It provides an even-driven architecture and non-blocking I/O API that optimizes an appln's throughput and scalability.
+->It contains a built-in library to allow applns to act as a webserver without software such as Apache HTTP server, IIS, Nginx.
+
+5.MEAN stack - free and open-source javascript software pack, builds dynamic websites and web applications.
+Its a combination of the following
+-> MongoDB, a NoSQL database.
+-> Express.js, a web applications framework.
+-> Angular JS, a javascript MVC framework for web apps,
+-> Node.js, a software platform for scalable server-side and networking applns.
+
+6.SAML - Security Assertion Markup Language
+Its an XML-based, data format for exchanging authentication and authorization data between an identity provider and a service provider.
+
+Terms
+1.Dynamic programming language -
+    a language, at runtime, execute many common programming behaviours that static programming languages perform during compilation.
+ ->It includes extension of the program, by adding new code, by extending objects and definitions, or by modifying the type system.
+
+2.Coding by convention -
+    a design paradigm which seeks to decrease the number of decisions that developers need to make, gaining simplicity, and not necessarily loosing flexibility.
+->Simply, a develop only needs to specify unconventional aspects of the application.
+
+3.Single-page application -
+    A web application or web site that fits on a single web page.
+-> The page doesn't reload at any point in the process, not does control transfer to another page.
+-> It involves dynamic communication with the web server behind the scenes.
+
+4.Internet of Things (IOT) - Internet of Everything, Network of Everything
+    It is the network of physical objects or things embedded with electronics, software, sensors and connectivity to enable objects to exchange data with the
+other connected devices based on a standard infrastructure.
+->Experts estimate that the IoT will consist of almost 50 billion objects by 2020
+
+5.Ubiquitous computing
+    A concept where computing is made to appear everywhere and anywhere. Unlike desktop computing, this can occur using any device, in any location, and in any format.
+
+6.Cloud computing -
+    A model to enable ubiquitous network access to a shared pool of configurable computing resources.
+-> It focuses on maximizing the effectiveness of the shared resources.
+-> This can work for allocating resources to users. For example, a cloud computer facility that serves European users during European business hours with a specific application (e.g., email)
+may reallocate the same resources to serve North American users during North America's business hours with a different application (e.g., a web server).
+
+TODO
+1.How google search works.
+2.ASCII vs UNICODE

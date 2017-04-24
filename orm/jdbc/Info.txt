@@ -1,0 +1,21 @@
+Add the following to pom file if any error occurs
+
+<!--
+    <dependencies>
+        Uncomment this and do the following if you face any error.
+        <!-- ORACLE database driver -->
+    <!-- The below plugin won't be in default maven repository. We've to manually install this to local repo as below
+        1.You can download it online
+        2.It comes as part to oracle db installtion. %oracle_home%/jdbc/lib/ojdbc6.jar
+        3.Then install it as below.
+            mvn install:install-file -Dfile={path/to/ojdbc6.jar} -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=12.1.0 -Dpackaging=jar
+            eg : mvn install:install-file -Dfile=D:\app\dgopali\product\12.1.0\dbhome_3\jdbc\lib\ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=12.1.0 -Dpackaging=jar
+
+    <dependency>
+        <groupId>com.oracle</groupId>
+        <artifactId>ojdbc6</artifactId>
+        <version>12.1.0</version>
+    </dependency>
+
+</dependencies>
+-->

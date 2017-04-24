@@ -1,0 +1,33 @@
+Operations
+NOT,complement (~) - 0 becomes 1 and 1 becomes 0
+->Logical negation of each bit.
+->Equal to two's compliment of a value minus one.
+
+
+
+One's complement
+Invert 1 to zero and zero to one in a binary number.
+
+Two's complement
+Method 1 : Find one's complement of a number and add one.
+
+Q1 : How to generate a negative number given its positive number. If you have a binary number (with 1 in msb), how to find magnitude of that negative number)
+
+
+~ is only for inverting bits in a number. It wont create either negative number or anything related to the number converted.
+If you want to know the magnitude of a negative number, just invert bits and find the magnitude and put negative sign infront of it.
+
+~ can be used in an if condition as below
+Without tilde (This method might return only negative number if character not found, i.e. -1)
+if (someStr.indexOf("a") >= 0) {
+    // Found it
+} else  {
+    // Not Found
+}
+
+With tilde (~-1 is 0, so 0 in a if condition means false. So using tilde here simplifies the code.)
+if (~someStr.indexOf("a")) {
+    // Found it
+} else  {
+    // Not Found
+}
