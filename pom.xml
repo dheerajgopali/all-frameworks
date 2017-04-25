@@ -25,6 +25,7 @@
         <module>front-end</module>
         <module>maven-work</module>
         <module>maven-tomcat</module>
+        <module>spring</module>
     </modules>
 
 

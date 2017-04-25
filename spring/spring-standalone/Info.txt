@@ -1,0 +1,2 @@
+This is a simple spring standalone application. It doesn't create a war file.
+It just print Hello ! Dheeraj
