@@ -9,8 +9,6 @@ import org.hibernate.cfg.Configuration;
  * Created by gopad on 24-04-2017.
  */
 public class ManageActor {
-    private static SessionFactory factory;
-
     public static void main(String[] args) {
         SessionFactory sessionFactory = new Configuration().configure()
                 .buildSessionFactory();
