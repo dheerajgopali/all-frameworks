@@ -1,2 +1,6 @@
 This is a simple spring standalone application. It doesn't create a war file.
 It just print Hello ! Dheeraj
+
+
+ApplicationContext was part of "spring" dependency.
+Later in 3.0 and further it application context is moved to "spring-context" dependency.
