@@ -1,0 +1,48 @@
+If we want to use Maven for deploying our web archives, we must configure Tomcat as a server in Maven’s settings.xml file.
+
+There are two locations where the settings.xml file may be found:
+
+The Maven install: ${maven.home}/conf/settings.xml
+A user’s install: ${user.home}/.m2/settings.xml
+Once you have found it add Tomcat as follows:
+
+<server>
+    <id>TomcatServer</id>
+    <username>admin</username>
+    <password>password</password>
+</server>
+
+Add the following plugin to pom.xml
+<plugin>
+    <groupId>org.apache.tomcat.maven</groupId>
+    <artifactId>tomcat7-maven-plugin</artifactId>
+    <version>2.2</version>
+    <configuration>
+        <url>http://localhost:8080/manager/text</url>
+        <server>TomcatServer</server>
+        <path>/myapp</path>
+    </configuration>
+</plugin>
+
+Add following roles(code in tomcat-users.xml) to tomcat user before bringing it up
+
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="manager-status"/>
+
+<user username="tomcat" password="tomcat" roles="manager-gui,manager-script,manager-jmx,manager-status"/>
+
+Start tomcat manually
+
+
+Then use any of the below command
+To deploy the web app:
+mvn tomcat7:deploy
+
+To undeploy it:
+mvn tomcat7:undeploy
+
+To redeploy after making changes:
+mvn tomcat7:redeploy
+

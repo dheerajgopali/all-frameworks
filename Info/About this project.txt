@@ -1,4 +1,4 @@
-Each module will have a separate framework.
+﻿Each module will have a separate framework.
 
 
 
@@ -15,7 +15,7 @@ Planning to create ui module in eclipse
 =================================================================================
 How to create remote GIT repository
 1.Create a folder with foldername.git extension
-2.git init �bare (This creates empty bare repo)
+2.git init –bare (This creates empty bare repo)
 
 How to create and sync local git repo and push it to remote repo
 1.Go to current project

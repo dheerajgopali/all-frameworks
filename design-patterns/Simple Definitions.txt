@@ -1,3 +1,0 @@
-Behavioural Pattern
-1.Iterator pattern (Cursor)
-    To access the elements of an aggregate object sequentially without exposing its underlying implementation
