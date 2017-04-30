@@ -1,0 +1,23 @@
+Repository:
+A repository stores two types of artifacts: releases and snapshots.
+Release repositories are for stable, static release artifacts(like production network)
+Snapshot repositories are frequently updated repositories that store binary software artifacts from projects under constant development (like development/testing network)
+
+
+The GAV(Group, Artifact, Version coordinate) coordinate standard is the foundation for Maven’s ability to manage dependencies.
+Group Identifier (groupId)
+A group identifier groups a set of artifacts into a logical group. often reflects organisation. eg : org.apache.maven
+
+Artifact Identifier (artifactId)
+An artifact is an identifier for a software component. represent an application or a library. The combination of groupId and artifactId must be unique for a project.
+eg : simple-webapp, simple-library
+
+Version (version)
+The version of a project follows the established convention of Major, Minor, and Point release versions.
+For example, if your simple-library artifact has a Major release version of 1, a minor release version of 2, and point release version of 3,
+your version would be 1.2.3. Versions can also have alphanumeric qualifiers which are often used to denote release status.
+An example of such a qualifier would be a version like “1.2.3-BETA” where BETA signals a stage of testing meaningful to consumers of a software component.
+
+Packaging (packaging)
+Maven was initially created to handle JAR file, but a Maven repository is completely agnostic where it comes to the type of artifact it is managing.
+Packaging can be anything that describes any binary software format including ZIP, SWC, SWF, NAR, WAR, EAR, SAR.

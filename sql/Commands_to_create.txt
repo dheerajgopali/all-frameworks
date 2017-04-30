@@ -1,0 +1,8 @@
+1.Count of rows in each table. Print table name and row count.
+2.Aggregate row count of the entire database.
+3.Count of columns in each table. Print table name and column count.
+4.Aggregate column count of the entire database.
+5.Search for something in the entire table, even if you don't know the column of it.
+6.Search for something in the entire database, even if you don't know the table or column of it.
+7.Search for something in the entire table, in columns like '%column substring%'
+8.Search for something in the entire database, in columns like '%column substring%'

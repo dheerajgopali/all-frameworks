@@ -20,7 +20,7 @@ Add the following plugin to pom.xml
     <configuration>
         <url>http://localhost:8080/manager/text</url>
         <server>TomcatServer</server>
-        <path>/myapp</path>
+        <path>/myapp</path> //This is your application name
     </configuration>
 </plugin>
 
