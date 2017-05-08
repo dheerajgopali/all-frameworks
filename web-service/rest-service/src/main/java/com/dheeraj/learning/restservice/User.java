@@ -4,6 +4,8 @@ package com.dheeraj.learning.restservice;
  * Created by gopad on 24-03-2017.
  */
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -11,8 +13,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "user")
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
+    @JsonProperty
     private int id;
+    @JsonProperty
     private String name;
+    @JsonProperty
     private String profession;
 
     public User() {

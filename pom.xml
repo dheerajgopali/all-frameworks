@@ -25,6 +25,7 @@
         <module>front-end</module>
         <module>spring</module>
         <module>maven</module>
+        <module>smookstest</module>
     </modules>
 
 
