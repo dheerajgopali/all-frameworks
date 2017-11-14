@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<performancedata>
+<TrialType>Performance</TrialType>
+<RunLevel>initial</RunLevel>
+<BuildLabel>PRPC-HEAD-1443</BuildLabel>
+<BuildDate>20170922T181600.000</BuildDate>
+<TestStart>20170925T123418.022</TestStart>
+<TestEnd>20170925T123418.022</TestEnd>
+<TestElapsedMinutes>0.0</TestElapsedMinutes>
+<isValidRun>false</isValidRun>
+<Application>null</Application>
+<InfoCount>10967</InfoCount>
+<GCTotalEvents>0</GCTotalEvents>
+<GCTotalMajor>0</GCTotalMajor>
+<GCTotalMinor>0</GCTotalMinor>
+<GCTotalOther>0</GCTotalOther>
+<GCTotalDuration>0.0</GCTotalDuration>
+<GCTotalGarbage>0.0</GCTotalGarbage>
+<GCTotalPreCollection>0.0</GCTotalPreCollection>
+<GCTotalPostCollection>0.0</GCTotalPostCollection>
+<GCMaxDuration>0.0</GCMaxDuration>
+<GCMaxGarbage>0.0</GCMaxGarbage>
+<GCMaxPreCollection>0.0</GCMaxPreCollection>
+<GCMaxPostCollection>0.0</GCMaxPostCollection>
+<SystemName>WBBPERF3W7</SystemName>
+<BuildNumber>1443</BuildNumber>
+<PRPCVersion>7.4_HEAD</PRPCVersion>
+<BuildInfo>7.4_HEAD 1443</BuildInfo>
+<PRPCRelease>7.4</PRPCRelease>
+<TestName>PERFCLIP</TestName>
+</performancedata>

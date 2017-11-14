@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>stackoverflow</artifactId>
+        <groupId>org.dheeraj.learning</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>include-dependencies-in-jar</artifactId>
+
+    <!--Task : To extract files from a dependency jar( -here it is jinput) file and include then in the
+        current output jar file for this project.
+        maven-dependency-plugin - extract the required files from jar to specific folder
+        maven-jar-plugin - includes the files from specific folder to the output jar file of this project.
+    -->
+    <properties>
+        <my.dll.folder>${project.build.directory}/unpackedfiles</my.dll.folder>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.java.jinput</groupId>
+            <artifactId>jinput</artifactId>
+            <version>2.0.7</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>net.java.jinput</groupId>
+                                    <artifactId>jinput-platform</artifactId>
+                                    <version>2.0.7</version>
+                                    <classifier>natives-windows</classifier>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${my.dll.folder}/bin</outputDirectory>
+                                    <destFileName>optional-new-name.jar</destFileName>
+                                    <includes>**/*.dll</includes>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classesDirectory>${my.dll.folder}</classesDirectory>
+                            <classifier>sample</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

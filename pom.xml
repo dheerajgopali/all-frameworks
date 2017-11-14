@@ -26,6 +26,11 @@
         <module>spring</module>
         <module>maven</module>
         <module>smookstest</module>
+        <module>stackoverflow</module>
+        <module>email-service</module>
+        <module>prpcjava</module>
+        <module>perf-framework</module>
+        <module>yourkit</module>
     </modules>
 
 
