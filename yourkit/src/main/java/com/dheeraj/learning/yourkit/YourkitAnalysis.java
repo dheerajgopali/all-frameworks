@@ -5,6 +5,15 @@ package com.dheeraj.learning.yourkit;
  */
 public class YourkitAnalysis {
     public static void main(String[] args) {
-        System.out.println("Hello");
+        long startTime = System.currentTimeMillis();
+        test();
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println(totalTime + " msec");
+    }
+
+    public static void test(){
+        for(int i=0;i<100000;i++)
+            System.out.print("Hello");
     }
 }
