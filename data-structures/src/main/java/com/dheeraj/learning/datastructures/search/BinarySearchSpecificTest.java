@@ -5,6 +5,16 @@ import com.dheeraj.learning.utilities.ListUtility;
 import java.util.List;
 
 /**
+ * Given a sorted array of integers, find the number of occurrences of a given target value.
+ Your algorithm’s runtime complexity must be in the order of O(log n).
+ If the target is not found in the array, return 0
+
+ **Example : **
+ Given [5, 7, 7, 8, 8, 10] and target value 8,
+ return 2.
+
+ //Modify regular binary search algo. Instead of stopping after finding the element, search for the first occurrence and
+ the last occurrence of the same element.
  * Created by dgopali on 10/19/2015.
  */
 public class BinarySearchSpecificTest {

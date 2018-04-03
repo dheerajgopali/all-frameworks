@@ -6,7 +6,26 @@ import com.dheeraj.learning.utilities.ListUtility;
 import java.util.List;
 
 /**
- * Created by dgopali on 10/20/2015.
+ * Suppose a sorted array A is rotated at some pivot unknown to you beforehand.
+
+ (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+ Find the minimum element.
+
+ The array will not contain duplicates.
+
+ NOTE 1: Also think about the case when there are duplicates. Does your current solution work? How does the time complexity change?*
+
+ Algo : The below algo doesn't work if there are duplicates
+ Case 1 : when a[low] < a[high]
+        retur low
+ case 2 : when a[mid] <= a[(mid + N -1)%N] or a[mid] >= a[(mid + 1)%N] //Since this is a rotating array, need to use modular division
+        return mid
+ case 3 : when a[low]<= a[mid]
+            low = mid + 1
+ case 4 : when a[mid] <= a[high]
+            high = mid - 1;
+ *
  */
 public class BinarySearchRotatedList {
     public static void main(String[] args) {
