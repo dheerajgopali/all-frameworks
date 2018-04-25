@@ -24,6 +24,7 @@
         <module>trash</module>
         <module>front-end</module>
         <module>maven-work</module>
+        <module>performance</module>
     </modules>
 
 
