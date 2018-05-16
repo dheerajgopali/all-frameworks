@@ -23,9 +23,9 @@ import java.util.List;
  * Then first binary search before minimum index part of the list
  * if not found search later minumum index part part of the list
  */
-public class BinarySearchSpecificThree {
+public class FindAValueInRotatedArray {
     public static void main(String[] args) {
-        BinarySearchSpecificThree bsst = new BinarySearchSpecificThree();
+        FindAValueInRotatedArray bsst = new FindAValueInRotatedArray();
         List<Integer> list = ListUtility.buildList("4,5,6,7,0,1,2");
         System.out.println(bsst.search(list, 4));
         System.out.println(bsst.searchSimpler(list, 7));

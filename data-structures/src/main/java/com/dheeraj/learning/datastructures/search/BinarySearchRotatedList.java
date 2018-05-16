@@ -68,13 +68,13 @@ public class BinarySearchRotatedList {
         int high=a.size()-1;
         while(low<=high){
             int mid=(low+high)/2;
-            if(a.get(low)<=a.get(high))
+            if(a.get(low)<=a.get(high)) //Check if it is not rotated at all
                 return low;
-            else if(a.get(mid)<=a.get(mid-1) && a.get(mid)<=a.get(mid+1))
+            else if(a.get(mid)<=a.get(mid-1) && a.get(mid)<=a.get(mid+1)) //Check if mid element is the rotated position.
                 return mid;
-            else if(a.get(mid)<=a.get(high))
+            else if(a.get(mid)<=a.get(high)) //Check if the position is in the left part.
                 high = mid-1;
-            else if(a.get(mid)>=a.get(low))
+            else if(a.get(mid)>=a.get(low)) //Check if the position is in the right part.
                 low = mid+1;
         }
         return -1;
