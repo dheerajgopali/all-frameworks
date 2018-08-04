@@ -25,6 +25,7 @@
         <module>front-end</module>
         <module>maven-work</module>
         <module>performance</module>
+        <module>profiling</module>
     </modules>
 
 

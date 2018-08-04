@@ -35,21 +35,22 @@ public class MinNoOfCoins {
         table[0]=0;
         for(int i=1;i<=value;i++)
             table[i]=Integer.MAX_VALUE;
-        System.out.println(basicFindRecursive(list,list.size(),value));//17=6+6+5
-        System.out.println(temp);
-        temp=0;
-        System.out.println(findRecursiveDynamicProgram(list,list.size(),value, table));//17=6+6+5
-        System.out.println(temp);
-        //35 -- 27 + 6 + 1 + 1, 18 + 6 + 6 + 5
+        for (int i = 0; i < 100; i++) {
+            System.out.println(basicFindRecursive(list,list.size(),value));//17=6+6+5
+            System.out.println(temp);
+            temp=0;
+            System.out.println(findRecursiveDynamicProgram(list,list.size(),value, table));//17=6+6+5
+            System.out.println(temp);
+            //35 -- 27 + 6 + 1 + 1, 18 + 6 + 6 + 5
         /*for (int i = 0; i <= value; i++) {
             System.out.println("Minimum number required for "+i+" is :"+ table[i]+", ");
         }*/
 
 
-        temp=0;
-        System.out.println(findIterativeDynamicProgram(list,list.size(),value));//17=6+6+5
-        System.out.println(temp);
-
+            temp=0;
+            System.out.println(findIterativeDynamicProgram(list,list.size(),value));//17=6+6+5
+            System.out.println(temp);
+        }
     }
 
     public static int basicFindRecursive(List<Integer> coins, int noOfCoins, int value){

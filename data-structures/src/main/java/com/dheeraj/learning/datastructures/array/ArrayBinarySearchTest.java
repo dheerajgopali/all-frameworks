@@ -45,7 +45,10 @@ public class ArrayBinarySearchTest {
         ArrayBinarySearchTest abst = new ArrayBinarySearchTest();
         ArrayList<ArrayList<Integer>> list = ArrayUtil.buildArrayList("1,10,10,20",2,2);
         ArrayUtil.displayArray(list);
-        System.out.println(abst.searchMatrix(list,10));
+
+        for (int i = 0; i < 10000; i++) {
+            System.out.println(abst.searchMatrix(list,10));
+        }
     }
 
     public int searchMatrix(ArrayList<ArrayList<Integer>> a, int b) {
