@@ -17,17 +17,18 @@ How to create remote GIT repository
 1.Create a folder with foldername.git extension
 2.git init –bare (This creates empty bare repo)
 
-How to create and sync local git repo and push it to remote repo
-1.Go to current project
-2.git init (Should not use -bare switch. -bare cleans all the existing files)
-3.Add the files to commit. Then commit the files (By default everything will go into master branch)
-4.Add a normal name to this repo. Easy to identify while pushing changes
-5.Push all the changes to the remote repo
+How to move your project to github.
+1. Create a repositoty in github. Dont add readme/gitignore et.
+2. Go to current project
+3. git init (Should not use -bare switch. -bare cleans all the existing files)
+4. Add the files to commit. Then commit the files (By default everything will go into master branch)
+5. Add remote $ git remote add origin http://.../<reponame>.git //Can get this URL from github.
+6. Create gitignore file from http://www.gitignore.io/
+6. git push origin master.
 
 Remote repository path (Its a pendrive. Change drive letter if pendrive drive is other than E drive)
 E:dev/remote-repos/git/all-frameworks.git
 
 How to clone the repo
 git clone E:dev/remote-repos/git/all-frameworks.git
-
 
