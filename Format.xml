@@ -1,0 +1,111 @@
+<xml>
+
+    <TraceEventHeader inskey="RULE-OBJ-ACTIVITY DATA-PORTAL SHOWDESKTOP #20200117T110835.185 GMT"
+                      keyname="Data-Portal ShowDesktop" rsname="Pega-Desktop" rsvers="08-05-01">
+        <Sequence>8431</Sequence>
+        <ThreadName>STANDARD</ThreadName>
+        <RequestorID>HTOL3ZUBIGD6J8CVLGU79GG92LZTNAP2XA</RequestorID>
+        <CorrelationID>HTOL3ZUBIGD6J8CVLGU79GG92LZTNAP2XA</CorrelationID>
+        <NodeID>d7083acafd230e99015f48f96e762929</NodeID>
+        <NodeName>vagrant</NodeName>
+        <ActivityNumber>34</ActivityNumber>
+        <ActivityName>SHOWDESKTOP</ActivityName>
+        <EventKey>RULE-OBJ-ACTIVITY DATA-PORTAL SHOWDESKTOP #20200117T110835.185 GMT</EventKey>
+        <EventName>Activity Begin</EventName>
+        <EventType>Activity Begin</EventType>
+        <Interaction>3</Interaction>
+        <PrimaryPageName>pyPortal</PrimaryPageName>
+    </TraceEventHeader>
+    <TraceEventHeader inskey="RULE-OBJ-ACTIVITY DATA-PORTAL SHOWDESKTOP #20200117T110835.185 GMT"
+                      keyname="Data-Portal ShowDesktop" rsname="Pega-Desktop" rsvers="08-05-01">
+        <Sequence>8432</Sequence>
+        <ThreadName>STANDARD</ThreadName>
+        <RequestorID>HTOL3ZUBIGD6J8CVLGU79GG92LZTNAP2XA</RequestorID>
+        <CorrelationID>HTOL3ZUBIGD6J8CVLGU79GG92LZTNAP2XA</CorrelationID>
+        <NodeID>d7083acafd230e99015f48f96e762929</NodeID>
+        <NodeName>vagrant</NodeName>
+        <ActivityNumber>34</ActivityNumber>
+        <ActivityName>SHOWDESKTOP</ActivityName>
+        <EventKey>RULE-OBJ-ACTIVITY DATA-PORTAL SHOWDESKTOP #20200117T110835.185 GMT</EventKey>
+        <EventName>Step Begin</EventName>
+        <EventType>Step Begin</EventType>
+        <Interaction>3</Interaction>
+        <StepMethod>Property-Set</StepMethod>
+        <StepNumber>1</StepNumber>
+        <PrimaryPageName>pxThread</PrimaryPageName>
+    </TraceEventHeader>
+    <TraceEventHeader inskey="RULE-OBJ-ACTIVITY DATA-PORTAL SHOWDESKTOP #20200117T110835.185 GMT"
+                      keyname="Data-Portal ShowDesktop" rsname="Pega-Desktop" rsvers="08-05-01">
+        <Sequence>8433</Sequence>
+        <ThreadName>STANDARD</ThreadName>
+        <RequestorID>HTOL3ZUBIGD6J8CVLGU79GG92LZTNAP2XA</RequestorID>
+        <CorrelationID>HTOL3ZUBIGD6J8CVLGU79GG92LZTNAP2XA</CorrelationID>
+        <NodeID>d7083acafd230e99015f48f96e762929</NodeID>
+        <NodeName>vagrant</NodeName>
+        <ActivityNumber>34</ActivityNumber>
+        <ActivityName>SHOWDESKTOP</ActivityName>
+        <EventKey>RULE-OBJ-ACTIVITY DATA-PORTAL SHOWDESKTOP #20200117T110835.185 GMT</EventKey>
+        <EventName>When Begin</EventName>
+        <EventType>When Begin</EventType>
+        <Interaction>3</Interaction>
+        <StepMethod>param.isWebMashup</StepMethod>
+        <PrimaryPageName>pxThread</PrimaryPageName>
+    </TraceEventHeader>
+    <TraceEventHeader inskey="RULE-OBJ-ACTIVITY DATA-PORTAL SHOWDESKTOP #20200117T110835.185 GMT"
+                      keyname="Data-Portal ShowDesktop" rsname="Pega-Desktop" rsvers="08-05-01">
+        <Sequence>8434</Sequence>
+        <ThreadName>STANDARD</ThreadName>
+        <RequestorID>HTOL3ZUBIGD6J8CVLGU79GG92LZTNAP2XA</RequestorID>
+        <CorrelationID>HTOL3ZUBIGD6J8CVLGU79GG92LZTNAP2XA</CorrelationID>
+        <NodeID>d7083acafd230e99015f48f96e762929</NodeID>
+        <NodeName>vagrant</NodeName>
+        <ActivityNumber>34</ActivityNumber>
+        <ActivityName>SHOWDESKTOP</ActivityName>
+        <EventKey>RULE-OBJ-ACTIVITY DATA-PORTAL SHOWDESKTOP #20200117T110835.185 GMT</EventKey>
+        <EventName>When End</EventName>
+        <EventType>When End</EventType>
+        <Interaction>3</Interaction>
+        <WhenStatus>False</WhenStatus>
+        <StepMethod>param.isWebMashup</StepMethod>
+        <PrimaryPageName>pxThread</PrimaryPageName>
+        <Elapsed>165</Elapsed>
+    </TraceEventHeader>
+    <TraceEventHeader inskey="RULE-OBJ-ACTIVITY DATA-PORTAL SHOWDESKTOP #20200117T110835.185 GMT"
+                      keyname="Data-Portal ShowDesktop" rsname="Pega-Desktop" rsvers="08-05-01">
+        <Sequence>8435</Sequence>
+        <ThreadName>STANDARD</ThreadName>
+        <RequestorID>HTOL3ZUBIGD6J8CVLGU79GG92LZTNAP2XA</RequestorID>
+        <CorrelationID>HTOL3ZUBIGD6J8CVLGU79GG92LZTNAP2XA</CorrelationID>
+        <NodeID>d7083acafd230e99015f48f96e762929</NodeID>
+        <NodeName>vagrant</NodeName>
+        <ActivityNumber>34</ActivityNumber>
+        <ActivityName>SHOWDESKTOP</ActivityName>
+        <EventKey>RULE-OBJ-ACTIVITY DATA-PORTAL SHOWDESKTOP #20200117T110835.185 GMT</EventKey>
+        <EventName>Step End</EventName>
+        <EventType>Step End</EventType>
+        <Interaction>3</Interaction>
+        <mStepStatus>Skip Step / exit remaining iterations</mStepStatus>
+        <StepMethod>Property-Set</StepMethod>
+        <StepNumber>1</StepNumber>
+        <PrimaryPageName>pxThread</PrimaryPageName>
+        <Elapsed>492</Elapsed>
+    </TraceEventHeader>
+    <TraceEventHeader inskey="RULE-OBJ-ACTIVITY DATA-PORTAL SHOWDESKTOP #20200117T110835.185 GMT"
+                      keyname="Data-Portal ShowDesktop" rsname="Pega-Desktop" rsvers="08-05-01">
+        <Sequence>8436</Sequence>
+        <ThreadName>STANDARD</ThreadName>
+        <RequestorID>HTOL3ZUBIGD6J8CVLGU79GG92LZTNAP2XA</RequestorID>
+        <CorrelationID>HTOL3ZUBIGD6J8CVLGU79GG92LZTNAP2XA</CorrelationID>
+        <NodeID>d7083acafd230e99015f48f96e762929</NodeID>
+        <NodeName>vagrant</NodeName>
+        <ActivityNumber>34</ActivityNumber>
+        <ActivityName>SHOWDESKTOP</ActivityName>
+        <EventKey>RULE-OBJ-ACTIVITY DATA-PORTAL SHOWDESKTOP #20200117T110835.185 GMT</EventKey>
+        <EventName>Step Begin</EventName>
+        <EventType>Step Begin</EventType>
+        <Interaction>3</Interaction>
+        <StepMethod>Call pzPopulateRequestor</StepMethod>
+        <StepNumber>2</StepNumber>
+        <PrimaryPageName>pyPortal</PrimaryPageName>
+    </TraceEventHeader>
+</xml>

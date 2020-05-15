@@ -6,14 +6,14 @@ package com.dheeraj.learning.datastructures.tree;
 public class ValidBSTTest {
     public static void main(String[] args) {
         ValidBSTTest obj = new ValidBSTTest();
-        System.out.println(obj.isValidBST(TreeNode.createBST("1,2,3,4,5,6")));
+        System.out.println(obj.isValidBST(TreeUtil.createBST("1,2,3,4,5,6")));
     }
 
-    public int isValidBST(TreeNode a) {
+    public int isValidBST(Node a) {
         return isBST(a,Integer.MIN_VALUE,Integer.MAX_VALUE);
     }
 
-    public int isBST(TreeNode a, int minValue, int maxValue){
+    public int isBST(Node a, int minValue, int maxValue){
         if(a==null) return 1;
         if(minValue <= a.val && a.val < maxValue
                 && isBST(a.left, minValue, a.val) == 1

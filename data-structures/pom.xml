@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>data-structures</artifactId>
+    <properties>
+        <spock.version>0.5-groovy-1.7</spock.version>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -21,6 +25,7 @@
                 </configuration>
             </plugin>
         </plugins>
+
     </build>
     <dependencies>
         <dependency>
@@ -29,6 +34,5 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
 
 </project>
