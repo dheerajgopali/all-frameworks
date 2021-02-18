@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 public class GreetingServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+		org.glassfish.grizzly.http.server.util.MimeType.
+		getServletConfig().getServletContext().getServletContextName();
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter pw =response.getWriter();
 		pw.print("hello");

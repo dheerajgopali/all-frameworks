@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class QuickTest {
     public static void main(String[] args) {
-        Random rand = new Random();
+        /*Random rand = new Random();
         int[][] sudokuArray = new int[4][4];
         //displayArray(sudokuArray);
         for (int col = 0; col < 4; col++) {
@@ -18,7 +18,32 @@ public class QuickTest {
             //displayArray(sudokuArray);
         }
         System.out.println("After processing");
-        displayArray(sudokuArray);
+        displayArray(sudokuArray);*/
+        //System.out.println("b".compareTo("a"));
+        QuickTest a = new QuickTest();
+
+    }
+
+    public void test(){
+        A d = new A();
+        System.out.println(d.d);
+    }
+
+    class A{
+        String d="test";
+        public A(){
+            d = "before";
+            B b = new B(this);
+            d = "after";
+        }
+    }
+
+    class B {
+        A a;
+        public B(A a){
+            this.a = a;
+            a.d = "later";
+        }
     }
 
     private static void displayArray(int[][] sudokuArray) {

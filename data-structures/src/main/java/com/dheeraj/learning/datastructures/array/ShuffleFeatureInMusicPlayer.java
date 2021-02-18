@@ -2,17 +2,21 @@ package com.dheeraj.learning.datastructures.array;
 
 import com.dheeraj.learning.utilities.StringUtil;
 
+import java.util.Random;
+
 public class ShuffleFeatureInMusicPlayer {
-    static String[] playlist = new String[10];
+    static String[] playlist = new String[4];
 
     public static void main(String[] args) {
         ShuffleFeatureInMusicPlayer sf = new ShuffleFeatureInMusicPlayer();
         sf.populatePlayList();
-        StringUtil.displayStringArray(playlist);
-        System.out.println();
+        //StringUtil.displayStringArray(playlist);
+        sf.shuffleRandomAndPlay();
+        //StringUtil.displayStringArray(playlist);
+        /*System.out.println();
         sf.shuffleAndPlay();
         System.out.println();
-        StringUtil.displayStringArray(playlist);
+        StringUtil.displayStringArray(playlist);*/
     }
 
     private void populatePlayList() {
@@ -36,6 +40,23 @@ public class ShuffleFeatureInMusicPlayer {
             //a = a+b
             //b = a-b
             //a = a-b
+        }
+    }
+
+    private void shuffleRandomAndPlay() {
+        while(true) {
+            int size = playlist.length;
+            while (size > 0) {
+                Random random = new Random();
+                int randomIndex = random.nextInt(size);
+                System.out.print(playlist[randomIndex] + "\t");
+                System.out.println(randomIndex);
+                String temp = playlist[size - 1];
+                playlist[size - 1] = playlist[randomIndex];
+                playlist[randomIndex] = temp;
+                --size;
+            }
+            System.out.println("==========");
         }
     }
 }
