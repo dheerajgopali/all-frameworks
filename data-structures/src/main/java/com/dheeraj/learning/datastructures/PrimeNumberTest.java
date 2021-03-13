@@ -1,6 +1,7 @@
 package com.dheeraj.learning.datastructures;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dgopali on 10/18/2015.
@@ -11,9 +12,55 @@ public class PrimeNumberTest {
         /*for(int i=0;i<=5;i++){
             System.out.print(pnt.isPrime(i) ? i + " ":"");
         }*/
-        System.out.println(pnt.sieve(10));
+        System.out.println(pnt.primeNumbers(100));
+        System.out.println(pnt.primeNumbersLeetCodeSieve(100));
     }
 
+    /**
+     * Given a number, get prime numbers below it.
+     * @param n
+     * @return
+     */
+    public int primeNumbers(int n) {
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(2);
+        int count=0;
+        for(int i=3;i<n;i=i+2) {
+            boolean isPrime = true;
+            for(int j=1;j<list.size();j++){
+                int divisor = list.get(j);
+                if(divisor*divisor>i)
+                    break;
+                count++;
+                if(i%divisor == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if(isPrime) {
+                list.add(i);
+            }
+        }
+        System.out.println("Dheeraj: "+count);
+        return list.size();
+    }
+
+    public int primeNumbersLeetCodeSieve(int n) {
+        boolean[] notPrime = new boolean[n];
+        int iterationcounter=0;
+        int count = 0;
+        for (int i = 2; i < n; i++) {
+            if (notPrime[i] == false) {
+                count++;
+                for (int j = 2; i*j < n; j++) {
+                    iterationcounter++;
+                    notPrime[i*j] = true;
+                }
+            }
+        }
+        System.out.println("Seive: "+iterationcounter);
+        return count;
+    }
     //Prime numbers under N including N
     public ArrayList<Integer> sieve(int a) {
         boolean[] primes = new boolean[a+1];

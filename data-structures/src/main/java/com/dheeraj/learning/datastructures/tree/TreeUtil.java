@@ -1,5 +1,8 @@
 package com.dheeraj.learning.datastructures.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TreeUtil {
     /**
      * Creates a perfect balanced tree
@@ -69,6 +72,40 @@ public class TreeUtil {
             root.left = insert(root.left, x);
         }else{
             root.right = insert(root.right, x);
+        }
+        return root;
+    }
+
+    public static Node createTreeWithInsertionOrder(String s) {
+        String[] str = s.split(",");
+        Queue<Node> queue = new LinkedList<>();
+        Node root = new Node(Integer.parseInt(str[0]));
+        queue.add(root);
+        int num = 1;
+        while(!queue.isEmpty() && num < str.length){
+            Node curr = queue.poll();
+            curr.left = new Node(Integer.parseInt(str[num++]));
+            queue.offer(curr.left);
+            if (num < str.length) {
+                curr.right = new Node(Integer.parseInt(str[num++]));
+                queue.offer(curr.right);
+            }
+        }
+
+        return root;
+    }
+
+    public static Node createTreeWithInsertionOrder_Optimzed(String s) {
+            String[] str = s.split(",");
+            Node root = null;
+            return insertLevelOrder(str, root, 0);
+    }
+
+    public static Node insertLevelOrder(String[] arr, Node root, int i) {
+        if (i < arr.length) {
+            root = new Node(Integer.parseInt(arr[i]));
+            root.left = insertLevelOrder(arr, root.left, 2 * i + 1);
+            root.right = insertLevelOrder(arr, root.right, 2 * i + 2);
         }
         return root;
     }

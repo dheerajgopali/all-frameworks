@@ -10,10 +10,191 @@ import java.util.*;
 public class ArrayThreeSum {
     public static void main(String[] args) {
         ArrayThreeSum ats = new ArrayThreeSum();
-        List<Integer> list = ListUtility.buildList("1,-4,0,0,5,-5,1,0,-2,4,-4,1,-1,-4,3,4,-1,-1,-3");
-        System.out.println(ats.threeSum(new ArrayList<Integer>(list)));
+        //List<Integer> list = ListUtility.buildList("1,-4,0,0,5,-5,1,0,-2,4,-4,1,-1,-4,3,4,-1,-1,-3");
+        int[] nums = {-4,-3,-1,0,9};
+        System.out.println(ats.threeSumClosest(nums, 4));
         //System.out.println(ats.threeSumClosest(new ArrayList<Integer>(list), 6));
     }
+
+    /**
+     * https://leetcode.com/problems/3sum-closest/
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int threeSumClosest(int[] nums, int target) {
+        int n=nums.length;
+        Arrays.sort(nums);
+        int closest = nums[0];
+        int closestDiff = Integer.MAX_VALUE;
+        for(int i=0;i<n-2;i++){
+            for(int j=i+1;j<n-1;j++) {
+                int largeClosestIndex = binarySearch(nums, j+1, target - nums[i] - nums[j]);
+                int smallClosestIndex = binarySearch2(nums, j+1, target - nums[i] - nums[j]);
+                int largeClosestNumber = nums[i]+nums[j]+nums[largeClosestIndex];
+                int smallClosestNumber = nums[i]+nums[j]+nums[smallClosestIndex];
+                int highDiff = Math.abs(largeClosestNumber - target);
+                int lowDiff = Math.abs(target - smallClosestNumber);
+                if(highDiff==0 || lowDiff==0)
+                    return target;
+                else {
+                    if(highDiff>lowDiff) {
+                        if(closestDiff > lowDiff) {
+                            closest = smallClosestNumber;
+                            closestDiff = lowDiff;
+                        }
+                    } else {
+                        if(closestDiff > highDiff) {
+                            closest = largeClosestNumber;
+                            closestDiff = highDiff;
+                        }
+                    }
+                }
+            }
+        }
+        return closest;
+    }
+
+    public int binarySearch(int[] nums, int start, int target) {
+        int end=nums.length-1;
+        while(start<end) {
+            int mid=(start+end)/2;
+            if(nums[mid] < target) {
+                start = mid+1;
+            } else if(nums[mid] > target) {
+                end = mid-1;
+            } else {
+                return mid;
+            }
+        }
+        return start;
+    }
+
+    public int binarySearch2(int[] nums, int start, int target) {
+        int end=nums.length-1;
+        while(start<end) {
+            int mid=(start+end+1)/2;
+            if(nums[mid] < target) {
+                start = mid;
+            } else if(nums[mid] > target) {
+                end = mid-1;
+            } else {
+                return mid;
+            }
+        }
+        return start;
+    }
+
+    /**
+     * 12th March 2021 - Solution from Leetcode - BASIC - 1
+     * https://leetcode.com/problems/3sum/solution/
+     *
+     * @param nums
+     * @return
+     */
+    public List<List<Integer>> threeSum(int[] nums) {
+        //Iterate over the pivot ele from 0 to n-2 ##TODO Check why needed to traverse till n
+        //If curr ele is greater than zero, skip it. (As we are only traversing right, all the elements towards right will be greater and cant get zero sum)
+        //If curr ele is same as previous ele, skip it.
+        int n = nums.length;
+        List<List<Integer>> res = new ArrayList<>();
+        Arrays.sort(nums);
+        for(int i=0;i<n && nums[i]<=0;i++) {
+            if(i==0 || nums[i-1] != nums[i]) {
+                twoSum(nums, i, res);
+            }
+        }
+
+        return res;
+    }
+
+    public void twoSum(int[] nums, int i, List<List<Integer>> res) {
+        int n = nums.length;
+        int left = i+1;
+        int right = n-1;
+        while(left < right) {
+            int sum = nums[i]+nums[left]+nums[right];
+            if(sum < 0) {
+                left++;
+            } else if(sum > 0) {
+                right--;
+            } else {
+                res.add(Arrays.asList(nums[i],nums[left],nums[right]));
+                left++;
+                right--;
+                while(left<right && nums[left+1]==nums[left]) {
+                    left++;
+                }
+            }
+        }
+    }
+
+    /**
+     * 12th March 2021 - Solution from Leetcode - INTERMEDIATE
+     * https://leetcode.com/problems/3sum/solution/
+     * Here hashset is used to reduce number of checks.
+     *
+     * @param nums
+     * @return
+     */
+    public List<List<Integer>> threeSum1(int[] nums) {
+        //Iterate over the pivot ele from 0 to n-2 ##TODO Check why needed to traverse till n
+        //If curr ele is greater than zero, skip it. (As we are only traversing right, all the elements towards right will be greater and cant get zero sum)
+        //If curr ele is same as previous ele, skip it.
+        int n = nums.length;
+        List<List<Integer>> res = new ArrayList<>();
+        Arrays.sort(nums);
+        for(int i=0;i<n && nums[i]<=0;i++) {
+            if(i==0 || nums[i-1] != nums[i]) {
+                twoSum1(nums, i, res);
+            }
+        }
+
+        return res;
+    }
+
+    public void twoSum1(int[] nums, int i, List<List<Integer>> res) {
+        int n = nums.length;
+        Set<Integer> set = new HashSet<>();
+        for(int j=i+1;j<n; j++) {
+            int complement = -nums[i]-nums[j];
+            if(set.contains(complement)) {
+                res.add(Arrays.asList(nums[i],nums[j],complement));
+                while(j+1<n && nums[j]==nums[j+1])
+                    j++;
+            }
+            set.add(nums[j]);
+        }
+    }
+
+    /**
+     * 12th March 2021 - Solution from Leetcode - Without sorting
+     * https://leetcode.com/problems/3sum/solution/
+     * Uses a set to avoid duplicates. Earlier methods uses sorted list to avoid duplicates.
+     *
+     * @param nums
+     * @return
+     */
+    public List<List<Integer>> threeSumWithoutSorting(int[] nums) {
+        Set<List<Integer>> res = new HashSet<>();
+        Set<Integer> dups = new HashSet<>();
+        for (int i = 0; i < nums.length; ++i)
+            if (dups.add(nums[i])) {
+                Set<Integer> seen = new HashSet<>();
+                for (int j = i + 1; j < nums.length; ++j) {
+                    int complement = -nums[i] - nums[j];
+                    if (seen.contains(complement)) {
+                        List<Integer> triplet = Arrays.asList(nums[i], nums[j], complement);
+                        Collections.sort(triplet);
+                        res.add(triplet);
+                    }
+                    seen.add(nums[j]);
+                }
+            }
+        return new ArrayList(res);
+    }
+
 
     public ArrayList<ArrayList<Integer>> threeSumStandard(ArrayList<Integer> a) {
         /*HashSet<Integer> set = new HashSet<Integer>(array);
@@ -33,7 +214,8 @@ public class ArrayThreeSum {
                     if(!list.contains(row));
                         list.add(row);
                     l++;
-                }else if(sum < 0){
+                }else
+                    if(sum < 0){
                     l++;
                 }else{
                     r--;
