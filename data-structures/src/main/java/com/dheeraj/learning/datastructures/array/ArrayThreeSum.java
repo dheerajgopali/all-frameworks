@@ -11,8 +11,8 @@ public class ArrayThreeSum {
     public static void main(String[] args) {
         ArrayThreeSum ats = new ArrayThreeSum();
         //List<Integer> list = ListUtility.buildList("1,-4,0,0,5,-5,1,0,-2,4,-4,1,-1,-4,3,4,-1,-1,-3");
-        int[] nums = {-4,-3,-1,0,9};
-        System.out.println(ats.threeSumClosest(nums, 4));
+        int[] nums = {-1,2,1,-4};
+        System.out.println(ats.threeSumClosest(nums, 1));
         //System.out.println(ats.threeSumClosest(new ArrayList<Integer>(list), 6));
     }
 
@@ -26,34 +26,21 @@ public class ArrayThreeSum {
     public int threeSumClosest(int[] nums, int target) {
         int n=nums.length;
         Arrays.sort(nums);
-        int closest = nums[0];
         int closestDiff = Integer.MAX_VALUE;
-        for(int i=0;i<n-2;i++){
+        for(int i=0;i<n && closestDiff!=0;i++){
             for(int j=i+1;j<n-1;j++) {
-                int largeClosestIndex = binarySearch(nums, j+1, target - nums[i] - nums[j]);
-                int smallClosestIndex = binarySearch2(nums, j+1, target - nums[i] - nums[j]);
-                int largeClosestNumber = nums[i]+nums[j]+nums[largeClosestIndex];
-                int smallClosestNumber = nums[i]+nums[j]+nums[smallClosestIndex];
-                int highDiff = Math.abs(largeClosestNumber - target);
-                int lowDiff = Math.abs(target - smallClosestNumber);
-                if(highDiff==0 || lowDiff==0)
-                    return target;
-                else {
-                    if(highDiff>lowDiff) {
-                        if(closestDiff > lowDiff) {
-                            closest = smallClosestNumber;
-                            closestDiff = lowDiff;
-                        }
-                    } else {
-                        if(closestDiff > highDiff) {
-                            closest = largeClosestNumber;
-                            closestDiff = highDiff;
-                        }
-                    }
-                }
+                int complement = target - nums[i] - nums[j];
+                int idx = binarySearch(nums, j+1, complement);
+                int hi = idx >= 0 ? idx : ~idx;
+                int lo = hi - 1;
+
+                if(hi < n && Math.abs(complement-nums[hi]) < Math.abs(closestDiff))
+                    closestDiff = complement-nums[hi];
+                if(lo > j && Math.abs(complement-nums[lo]) < Math.abs(closestDiff))
+                    closestDiff = complement-nums[lo];
             }
         }
-        return closest;
+        return target - closestDiff;
     }
 
     public int binarySearch(int[] nums, int start, int target) {
@@ -68,7 +55,7 @@ public class ArrayThreeSum {
                 return mid;
             }
         }
-        return start;
+        return -(start+1); //+1 to handle when the insertion point is 0.
     }
 
     public int binarySearch2(int[] nums, int start, int target) {
