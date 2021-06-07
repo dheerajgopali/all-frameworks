@@ -32,6 +32,7 @@
         <module>ssl</module>
         <module>lamda</module>
         <module>java/all</module>
+        <module>security</module>
     </modules>
 
 
