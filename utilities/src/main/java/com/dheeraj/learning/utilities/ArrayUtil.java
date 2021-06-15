@@ -1,6 +1,8 @@
 package com.dheeraj.learning.utilities;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by dgopali on 10/17/2015.
@@ -85,6 +87,45 @@ public class ArrayUtil {
             }
             System.out.print("]\n");
         }
+    }
+
+    /**
+     * Builds array with random numbers with given size and given data range
+     */
+    public static int[] buildArrayWithRandomNumbers(int n, int low, int high, boolean duplicates) {
+        if(duplicates) {
+            return buildArrayWithRandomNumbers(n,low,high);
+        }
+
+        if(n > high - low + 1) {
+            throw new RuntimeException("Cant generate unique random with given range");
+        }
+
+        int[] arr = new int[n];
+        Set<Integer> set = new HashSet<Integer>();
+        for(int i=0;i<n;) {
+            int temp = (int)(low + Math.random()*(high-low));
+            if(!set.contains(temp)) {
+                arr[i++] = temp;
+                set.add(temp);
+            }
+        }
+        return arr;
+    }
+
+    /**
+     * With duuplicates
+     * @param n
+     * @param low
+     * @param high
+     * @return
+     */
+    public static int[] buildArrayWithRandomNumbers(int n, int low, int high) {
+        int[] arr = new int[n];
+        for(int i=0;i<n;i++) {
+            arr[i] = (int)(low + Math.random()*(high-low));
+        }
+        return arr;
     }
 
 }

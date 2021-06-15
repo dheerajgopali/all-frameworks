@@ -2,6 +2,7 @@ package com.dheeraj.learning.datastructures.sorting;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given
@@ -34,7 +35,7 @@ public class QuickSortTest {
         System.out.println(a);
     }
 
-    private ArrayList<Integer> quickSort(int lowerIndex, int higherIndex, ArrayList<Integer> array) {
+    private List<Integer> quickSort(int lowerIndex, int higherIndex, List<Integer> array) {
         if(lowerIndex>higherIndex) return null;
         int i = lowerIndex;
         int j = higherIndex;
@@ -67,7 +68,7 @@ public class QuickSortTest {
         return array;
     }
 
-    private void exchangeNumbers(int i, int j, ArrayList<Integer> array) {
+    private void exchangeNumbers(int i, int j, List<Integer> array) {
         int temp = array.get(i);
         array.set(i,array.get(j));
         array.set(j,temp);
@@ -152,13 +153,13 @@ public class QuickSortTest {
         return array;
     }
 
-    public ArrayList<Integer> sort(ArrayList<Integer> inputArr) {
+    public List<Integer> sort(List<Integer> inputArr) {
 
         if (inputArr == null || inputArr.size() == 0) {
             return null;
         }
         int length = inputArr.size();
-        ArrayList<Integer> outputArray = quickSort(0, length - 1, inputArr);
+        List<Integer> outputArray = quickSort(0, length - 1, inputArr);
         return outputArray;
     }
 }
