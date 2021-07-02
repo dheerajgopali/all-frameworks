@@ -2,7 +2,6 @@ package com.dheeraj.learning.designpatterns.headfirst.iterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 public class PancakeHouseMenu implements Menu {
     ArrayList<MenuItem> menuItems;
@@ -32,7 +31,7 @@ public class PancakeHouseMenu implements Menu {
         menuItems.add(menuItem);
     }
     public Iterator<MenuItem> createIterator() {
-        return new PancakeHouseIterator(menuItems);
+        return menuItems.iterator();
     }
     // other menu methods here
 }
