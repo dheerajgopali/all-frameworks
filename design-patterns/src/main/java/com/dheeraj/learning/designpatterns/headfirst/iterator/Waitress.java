@@ -1,27 +1,19 @@
 package com.dheeraj.learning.designpatterns.headfirst.iterator;
 
 import java.util.Iterator;
+import java.util.List;
 
 public class Waitress {
-    Menu pancakeHouseMenu;
-    Menu dinerMenu;
-    Menu cafeMenu;
-    public Waitress(Menu pancakeHouseMenu, Menu dinerMenu, Menu cafeMenu) {
-        this.pancakeHouseMenu = pancakeHouseMenu;
-        this.dinerMenu = dinerMenu;
-        this.cafeMenu = cafeMenu;
+    List<Menu> menuList;
+
+    public Waitress(List<Menu> menuList) {
+        this.menuList = menuList;
     }
     public void printMenu() {
-        Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
-        Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
-        Iterator<MenuItem> cafeIterator = cafeMenu.createIterator();
-
-        System.out.println("MENU\n----\nBREAKFAST");
-        printMenu(pancakeIterator);
-        System.out.println("\nLUNCH");
-        printMenu(dinerIterator);
-        System.out.println("\nCafe");
-        printMenu(cafeIterator);
+        for (Menu menu : menuList) {
+            Iterator<MenuItem> menuItemIterator = menu.createIterator();
+            printMenu(menuItemIterator);
+        }
     }
     private void printMenu(Iterator<MenuItem> iterator) {
         while (iterator.hasNext()) {
